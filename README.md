@@ -9,7 +9,10 @@ Awesome hacks for the Nvidia Shield Portable
 The original instructions can be found on XDA Developers [here](https://forum.xda-developers.com/nvidia-shield/development/recovery-twrp-2-8-5-0-t3042190), but that thread now suggests to go [here](https://forum.xda-developers.com/nvidia-shield/development/mod-multirom-shield-portable-t3090177) which provides a link to TWRP source [here](https://github.com/Tasssadar/Team-Win-Recovery-Project). If you don't want to build it yourself, you can download a build [here](https://www.androidfilehost.com/?fid=24566382913912866). (MD5 checksum: `ad5d6e5561d6b70b15ced6555992d632`)
 
 #### Download official TWRP roth image
-You could also download one of the official TWRP roth images [here](https://dl.twrp.me/roth/) which also come with nifty GPG signatures.
+You could also download one of the official TWRP roth images [here](https://dl.twrp.me/roth/).
+
+##### Optional, but recommended: Verify TWRP image
+TWRP Images come with nifty GPG signatures.
 ``` bash
 $ gpg --verify twrp-3.2.3-0-roth.img.asc twrp-3.2.3-0-roth.img
 gpg: Signature made Mon, Aug  6, 2018  9:08:53 PM MDT using RSA key ID 891A43DF
