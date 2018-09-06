@@ -55,7 +55,7 @@ If that's all good, reboot the device into bootloader:
 ``` bash
 $ adb reboot bootloader
 ```
-The shield should immediately restart into a black screen with some menu options. Check Device Manager to see how the Windows recognizes the device in fastboot mode. 
+The shield should immediately restart into a black screen with some menu options. Check Device Manager to see how the Windows recognizes the device in fastboot mode.
 
 ### Update Shield drivers
 Download the Shield Family drivers [here](http://developer.download.nvidia.com/mobile/shield/SHIELD_Family_WHQL_USB_driver_201801.zip). If it's displayed as _Fastboot_, right-click, choose _Update Driver_, _Browse my computer for driver software_, _Let me pick from a list of available drivers on my computer_, double-click _Show all devices_, then click _Have Disk..._. Browse into the driver package where `android_winusb.inf` is located. Click OK and choose _Android Bootloader Interface_. Click _Yes_ through the warning.
@@ -104,13 +104,17 @@ $ adb reboot recovery
 ```
 Once TWRP has loaded, go to Backup. To be continued...
 
-### Flase official system update
-Download update from [here](https://developer.nvidia.com/gameworksdownload). You probably want either Update 110 (Android 5.0) or Update 101 (Android 4.2). Unzip the downloaded package. From a command line, boot the Shield into bootloader mode and install the images in the package.
-``` sh
+### Flash official system update
+Download update from [here](https://developer.nvidia.com/gameworksdownload). You probably want either Update 110 (Android 5.0) or Update 101 (Android 4.2). Unzip the downloaded package. From a command line, boot the Shield into bootloader mode:
+``` bash
+$ adb reboot bootloader
+```
+
+Install the images in the package.
+``` bash
 $ fastboot devices
 05116135003151FC04C0    fastboot
 
-James@vinyl /cygdrive/d/android/shield/nv-recovery-image-shield-portable-update110
 $ fastboot flash recovery recovery.img
 target reported max download size of 643825664 bytes
 sending 'recovery' (7004 KB)...
@@ -156,4 +160,8 @@ OKAY [  0.022s]
 writing 'dtb'...
 OKAY [  0.017s]
 finished. total time: 0.040s
+```
+Finally, reboot the device for normal operation.
+```
+fastboot reboot
 ```
